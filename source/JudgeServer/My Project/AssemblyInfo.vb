@@ -10,9 +10,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("JudgeServer")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("PCoS.Cc")> 
+<Assembly: AssemblyCompany("Zsys Studio")> 
 <Assembly: AssemblyProduct("JudgeServer")> 
-<Assembly: AssemblyCopyright("Copyright © PCoS.Cc 2012")> 
+<Assembly: AssemblyCopyright("Copyright © Zsys Studio 2012")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
