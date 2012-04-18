@@ -24,14 +24,14 @@ Partial Class Main
     Private Sub InitializeComponent()
         Me.ServerTab = New System.Windows.Forms.TabControl()
         Me.ProblemTabPage = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.NetworkTabPage = New System.Windows.Forms.TabPage()
         Me.ServerTab.SuspendLayout()
         Me.SuspendLayout()
         '
         'ServerTab
         '
         Me.ServerTab.Controls.Add(Me.ProblemTabPage)
-        Me.ServerTab.Controls.Add(Me.TabPage2)
+        Me.ServerTab.Controls.Add(Me.NetworkTabPage)
         Me.ServerTab.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ServerTab.Location = New System.Drawing.Point(0, 0)
         Me.ServerTab.Name = "ServerTab"
@@ -49,15 +49,15 @@ Partial Class Main
         Me.ProblemTabPage.Text = "Problem Setting"
         Me.ProblemTabPage.UseVisualStyleBackColor = True
         '
-        'TabPage2
+        'NetworkTabPage
         '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(476, 421)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Network Setting"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.NetworkTabPage.Location = New System.Drawing.Point(4, 22)
+        Me.NetworkTabPage.Name = "NetworkTabPage"
+        Me.NetworkTabPage.Padding = New System.Windows.Forms.Padding(3)
+        Me.NetworkTabPage.Size = New System.Drawing.Size(476, 421)
+        Me.NetworkTabPage.TabIndex = 1
+        Me.NetworkTabPage.Text = "Network Setting"
+        Me.NetworkTabPage.UseVisualStyleBackColor = True
         '
         'Main
         '
@@ -73,5 +73,5 @@ Partial Class Main
     End Sub
     Friend WithEvents ServerTab As System.Windows.Forms.TabControl
     Friend WithEvents ProblemTabPage As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents NetworkTabPage As System.Windows.Forms.TabPage
 End Class
