@@ -22,9 +22,16 @@ Partial Class ProblemControl
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Problem A", "", "", "1000"}, -1)
-        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Problem B", "", "", "1000"}, -1)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ProblemsLabel = New System.Windows.Forms.Label()
+        Me.ProblemListView = New System.Windows.Forms.ListView()
+        Me.ProblemName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Input = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Output = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.TimeLimit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.RefreshButton = New System.Windows.Forms.Button()
+        Me.ProblemNumberNumeric = New System.Windows.Forms.NumericUpDown()
+        Me.ProblemNumberLabel = New System.Windows.Forms.Label()
         Me.EditGroupBox = New System.Windows.Forms.GroupBox()
         Me.ClearButton = New System.Windows.Forms.Button()
         Me.NameTextBox = New System.Windows.Forms.TextBox()
@@ -41,19 +48,10 @@ Partial Class ProblemControl
         Me.StandardInputLabel = New System.Windows.Forms.Label()
         Me.RegisterAllButton = New System.Windows.Forms.Button()
         Me.ClearAllButton = New System.Windows.Forms.Button()
-        Me.ProblemNumberLabel = New System.Windows.Forms.Label()
-        Me.ProblemNumberNumeric = New System.Windows.Forms.NumericUpDown()
-        Me.RefreshButton = New System.Windows.Forms.Button()
-        Me.ProblemListView = New System.Windows.Forms.ListView()
-        Me.ProblemsLabel = New System.Windows.Forms.Label()
-        Me.ProblemName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Input = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Output = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.TimeLimit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.GroupBox1.SuspendLayout()
+        CType(Me.ProblemNumberNumeric, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.EditGroupBox.SuspendLayout()
         CType(Me.TimeLimitNumberic, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProblemNumberNumeric, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -72,6 +70,78 @@ Partial Class ProblemControl
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Manage Problem"
+        '
+        'ProblemsLabel
+        '
+        Me.ProblemsLabel.AutoSize = True
+        Me.ProblemsLabel.Location = New System.Drawing.Point(7, 57)
+        Me.ProblemsLabel.Name = "ProblemsLabel"
+        Me.ProblemsLabel.Size = New System.Drawing.Size(56, 13)
+        Me.ProblemsLabel.TabIndex = 4
+        Me.ProblemsLabel.Text = "Problems: "
+        '
+        'ProblemListView
+        '
+        Me.ProblemListView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ProblemListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ProblemName, Me.Input, Me.Output, Me.TimeLimit})
+        Me.ProblemListView.GridLines = True
+        Me.ProblemListView.Location = New System.Drawing.Point(10, 73)
+        Me.ProblemListView.Name = "ProblemListView"
+        Me.ProblemListView.Size = New System.Drawing.Size(322, 177)
+        Me.ProblemListView.TabIndex = 3
+        Me.ProblemListView.UseCompatibleStateImageBehavior = False
+        Me.ProblemListView.View = System.Windows.Forms.View.Details
+        '
+        'ProblemName
+        '
+        Me.ProblemName.Text = "Problem Name"
+        Me.ProblemName.Width = 87
+        '
+        'Input
+        '
+        Me.Input.Text = "Input"
+        Me.Input.Width = 77
+        '
+        'Output
+        '
+        Me.Output.Text = "Output"
+        Me.Output.Width = 74
+        '
+        'TimeLimit
+        '
+        Me.TimeLimit.Text = "Time Limit"
+        Me.TimeLimit.Width = 78
+        '
+        'RefreshButton
+        '
+        Me.RefreshButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RefreshButton.Location = New System.Drawing.Point(229, 23)
+        Me.RefreshButton.Name = "RefreshButton"
+        Me.RefreshButton.Size = New System.Drawing.Size(103, 23)
+        Me.RefreshButton.TabIndex = 2
+        Me.RefreshButton.Text = "Refresh"
+        Me.RefreshButton.UseVisualStyleBackColor = True
+        '
+        'ProblemNumberNumeric
+        '
+        Me.ProblemNumberNumeric.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ProblemNumberNumeric.Location = New System.Drawing.Point(100, 26)
+        Me.ProblemNumberNumeric.Name = "ProblemNumberNumeric"
+        Me.ProblemNumberNumeric.Size = New System.Drawing.Size(120, 20)
+        Me.ProblemNumberNumeric.TabIndex = 1
+        Me.ProblemNumberNumeric.Value = New Decimal(New Integer() {10, 0, 0, 0})
+        '
+        'ProblemNumberLabel
+        '
+        Me.ProblemNumberLabel.AutoSize = True
+        Me.ProblemNumberLabel.Location = New System.Drawing.Point(6, 28)
+        Me.ProblemNumberLabel.Name = "ProblemNumberLabel"
+        Me.ProblemNumberLabel.Size = New System.Drawing.Size(91, 13)
+        Me.ProblemNumberLabel.TabIndex = 0
+        Me.ProblemNumberLabel.Text = "Problem Number: "
         '
         'EditGroupBox
         '
@@ -98,7 +168,8 @@ Partial Class ProblemControl
         '
         'ClearButton
         '
-        Me.ClearButton.Location = New System.Drawing.Point(285, 137)
+        Me.ClearButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ClearButton.Location = New System.Drawing.Point(365, 140)
         Me.ClearButton.Name = "ClearButton"
         Me.ClearButton.Size = New System.Drawing.Size(92, 30)
         Me.ClearButton.TabIndex = 12
@@ -126,7 +197,8 @@ Partial Class ProblemControl
         '
         'ConfirmButton
         '
-        Me.ConfirmButton.Location = New System.Drawing.Point(187, 137)
+        Me.ConfirmButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ConfirmButton.Location = New System.Drawing.Point(267, 140)
         Me.ConfirmButton.Name = "ConfirmButton"
         Me.ConfirmButton.Size = New System.Drawing.Size(92, 30)
         Me.ConfirmButton.TabIndex = 9
@@ -239,77 +311,6 @@ Partial Class ProblemControl
         Me.ClearAllButton.Text = "Clear All"
         Me.ClearAllButton.UseVisualStyleBackColor = True
         '
-        'ProblemNumberLabel
-        '
-        Me.ProblemNumberLabel.AutoSize = True
-        Me.ProblemNumberLabel.Location = New System.Drawing.Point(6, 28)
-        Me.ProblemNumberLabel.Name = "ProblemNumberLabel"
-        Me.ProblemNumberLabel.Size = New System.Drawing.Size(91, 13)
-        Me.ProblemNumberLabel.TabIndex = 0
-        Me.ProblemNumberLabel.Text = "Problem Number: "
-        '
-        'ProblemNumberNumeric
-        '
-        Me.ProblemNumberNumeric.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ProblemNumberNumeric.Location = New System.Drawing.Point(100, 26)
-        Me.ProblemNumberNumeric.Name = "ProblemNumberNumeric"
-        Me.ProblemNumberNumeric.Size = New System.Drawing.Size(120, 20)
-        Me.ProblemNumberNumeric.TabIndex = 1
-        Me.ProblemNumberNumeric.Value = New Decimal(New Integer() {10, 0, 0, 0})
-        '
-        'RefreshButton
-        '
-        Me.RefreshButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RefreshButton.Location = New System.Drawing.Point(229, 23)
-        Me.RefreshButton.Name = "RefreshButton"
-        Me.RefreshButton.Size = New System.Drawing.Size(103, 23)
-        Me.RefreshButton.TabIndex = 2
-        Me.RefreshButton.Text = "Refresh"
-        Me.RefreshButton.UseVisualStyleBackColor = True
-        '
-        'ProblemListView
-        '
-        Me.ProblemListView.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ProblemListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ProblemName, Me.Input, Me.Output, Me.TimeLimit})
-        Me.ProblemListView.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2})
-        Me.ProblemListView.Location = New System.Drawing.Point(10, 73)
-        Me.ProblemListView.Name = "ProblemListView"
-        Me.ProblemListView.Size = New System.Drawing.Size(322, 177)
-        Me.ProblemListView.TabIndex = 3
-        Me.ProblemListView.UseCompatibleStateImageBehavior = False
-        Me.ProblemListView.View = System.Windows.Forms.View.Details
-        '
-        'ProblemsLabel
-        '
-        Me.ProblemsLabel.AutoSize = True
-        Me.ProblemsLabel.Location = New System.Drawing.Point(7, 57)
-        Me.ProblemsLabel.Name = "ProblemsLabel"
-        Me.ProblemsLabel.Size = New System.Drawing.Size(56, 13)
-        Me.ProblemsLabel.TabIndex = 4
-        Me.ProblemsLabel.Text = "Problems: "
-        '
-        'ProblemName
-        '
-        Me.ProblemName.Text = "Problem Name"
-        Me.ProblemName.Width = 87
-        '
-        'Input
-        '
-        Me.Input.Text = "Input"
-        Me.Input.Width = 77
-        '
-        'Output
-        '
-        Me.Output.Text = "Output"
-        Me.Output.Width = 74
-        '
-        'TimeLimit
-        '
-        Me.TimeLimit.Text = "Time Limit"
-        Me.TimeLimit.Width = 78
-        '
         'ProblemControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -322,10 +323,10 @@ Partial Class ProblemControl
         Me.Size = New System.Drawing.Size(463, 441)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.ProblemNumberNumeric, System.ComponentModel.ISupportInitialize).EndInit()
         Me.EditGroupBox.ResumeLayout(False)
         Me.EditGroupBox.PerformLayout()
         CType(Me.TimeLimitNumberic, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProblemNumberNumeric, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
