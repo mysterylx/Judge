@@ -86,8 +86,10 @@ Partial Class ProblemControl
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ProblemListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ProblemName, Me.Input, Me.Output, Me.TimeLimit})
+        Me.ProblemListView.FullRowSelect = True
         Me.ProblemListView.GridLines = True
         Me.ProblemListView.Location = New System.Drawing.Point(10, 73)
+        Me.ProblemListView.MultiSelect = False
         Me.ProblemListView.Name = "ProblemListView"
         Me.ProblemListView.Size = New System.Drawing.Size(322, 177)
         Me.ProblemListView.TabIndex = 3
