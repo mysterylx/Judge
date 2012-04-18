@@ -9,9 +9,9 @@
             Return VProblemNumber
         End Get
         Set(ByVal value As Integer)
+            ProblemListView.Items.Clear()
             If value > 0 Then
                 VProblemNumber = value
-                ProblemListView.Items.Clear()
                 ReDim Preserve VProblemSet(VProblemNumber)
                 For i = 1 To VProblemNumber
                     If VProblemSet(i) Is Nothing Then
@@ -35,6 +35,10 @@
     End Property
 
     Private Sub RefreshButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefreshButton.Click
-        Me.ProblemNumber = Me.ProblemNumberNumeric.Value
+        ProblemNumber = ProblemNumberNumeric.Value
+    End Sub
+
+    Private Sub ClearAllButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ClearAllButton.Click
+        ProblemNumber = 0
     End Sub
 End Class
