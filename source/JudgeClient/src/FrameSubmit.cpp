@@ -59,3 +59,21 @@ void FrameSubmit::on_selectButton_clicked()
         this->ui->mainFileEdit->setText(fileName);
     }
 }
+
+void FrameSubmit::on_submitButton_clicked()
+{
+    //TODO
+}
+
+void FrameSubmit::on_testButton_clicked()
+{
+    this->compileProcess = new QProcess(this);
+    this->connect(this->compileProcess, SIGNAL(readyRead()), this, SLOT(compileOutput()));
+    //this->compileProcess->start("g++ -Wall " + this->ui->mainFileEdit->text() +  " -o main.exe");
+    this->compileProcess->start("main.exe");
+}
+
+void FrameSubmit::compileOutput()
+{
+    QMessageBox::information(this, "Output", this->compileProcess->readAll());
+}

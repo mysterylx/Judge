@@ -19,7 +19,6 @@ public:
     
 private slots:
     void on_hideTextCheckBox_stateChanged(int arg1);
-
     void on_changePasswordButton_clicked();
 
 private:

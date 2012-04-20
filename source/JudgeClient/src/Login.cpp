@@ -13,6 +13,14 @@ Login::~Login()
     delete ui;
 }
 
+void Login::keyPressEvent(QKeyEvent *event)
+{
+    if(event->key() == Qt::Key_Enter)
+    {
+        this->ui->loginButton->click();
+    }
+}
+
 void Login::on_loginButton_clicked()
 {
     //TODO
