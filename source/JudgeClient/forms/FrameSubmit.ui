@@ -122,7 +122,14 @@
    <item>
     <layout class="QGridLayout" name="additionalLayout">
      <item row="0" column="0">
-      <widget class="QTableView" name="additionTableView"/>
+      <widget class="QTableView" name="additionTableView">
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
+      </widget>
      </item>
      <item row="0" column="1">
       <layout class="QVBoxLayout" name="submitLayout">

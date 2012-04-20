@@ -2,6 +2,7 @@
 #define FRAMESUBMIT_H
 
 #include <QFrame>
+#include <QStandardItemModel>
 
 namespace Ui {
 class FrameSubmit;
@@ -17,6 +18,9 @@ public:
     
 private:
     Ui::FrameSubmit *ui;
+    QStandardItemModel *additionalModel;
+
+    void initAdditionView();
 };
 
 #endif // FRAMESUBMIT_H
