@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "MainWindow.h"
+#include "Information.h"
 
 namespace Ui {
 class Login;

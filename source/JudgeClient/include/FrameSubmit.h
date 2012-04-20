@@ -2,6 +2,8 @@
 #define FRAMESUBMIT_H
 
 #include <QFrame>
+#include <QStringList>
+#include <QFileDialog>
 #include <QStandardItemModel>
 
 namespace Ui {
@@ -16,6 +18,13 @@ public:
     explicit FrameSubmit(QWidget *parent = 0);
     ~FrameSubmit();
     
+private slots:
+    void on_addButton_clicked();
+
+    void on_deleteButton_clicked();
+
+    void on_selectButton_clicked();
+
 private:
     Ui::FrameSubmit *ui;
     QStandardItemModel *additionalModel;

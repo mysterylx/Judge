@@ -2,6 +2,8 @@
 #define FRAMESETTING_H
 
 #include <QFrame>
+#include <QMessageBox>
+#include "Information.h"
 
 namespace Ui {
 class FrameSetting;
@@ -15,6 +17,11 @@ public:
     explicit FrameSetting(QWidget *parent = 0);
     ~FrameSetting();
     
+private slots:
+    void on_hideTextCheckBox_stateChanged(int arg1);
+
+    void on_changePasswordButton_clicked();
+
 private:
     Ui::FrameSetting *ui;
 };

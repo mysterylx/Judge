@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QString>
+#include "Information.h"
 #include "FrameSubmit.h"
 #include "FrameClarifications.h"
 #include "FrameRuns.h"
@@ -19,9 +20,6 @@ class MainWindow : public QWidget
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    void setUserInfo(const QString &userName, const QString &userPassword);
-    const QString getUserName() const;
-    const QString getUserPassword() const;
     
 private slots:
     void on_exitButton_clicked();
@@ -32,8 +30,6 @@ private:
     FrameClarifications     *frameClarifications;
     FrameRuns               *frameRuns;
     FrameSetting            *frameSetting;
-    QString userName;
-    QString userPassword;
 
     void initTabs();
 };

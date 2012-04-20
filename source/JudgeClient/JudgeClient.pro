@@ -18,14 +18,16 @@ SOURCES += src/main.cpp\
     src/FrameSubmit.cpp \
     src/FrameClarifications.cpp \
     src/FrameRuns.cpp \
-    src/FrameSetting.cpp
+    src/FrameSetting.cpp \
+    src/Information.cpp
 
 HEADERS  += include/Login.h \
     include/MainWindow.h \
     include/FrameSubmit.h \
     include/FrameClarifications.h \
     include/FrameRuns.h \
-    include/FrameSetting.h
+    include/FrameSetting.h \
+    include/Information.h
 
 FORMS    += forms/Login.ui \
     forms/MainWindow.ui \
