@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>478</width>
+    <height>467</height>
    </rect>
   </property>
   <property name="font">
@@ -65,21 +65,25 @@
       <attribute name="title">
        <string>Submit</string>
       </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2"/>
      </widget>
      <widget class="QWidget" name="clarificationsTab">
       <attribute name="title">
        <string>Clarifications</string>
       </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_5"/>
      </widget>
      <widget class="QWidget" name="runsTab">
       <attribute name="title">
        <string>Runs</string>
       </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4"/>
      </widget>
      <widget class="QWidget" name="settingsTab">
       <attribute name="title">
        <string>Settings</string>
       </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3"/>
      </widget>
     </widget>
    </item>
