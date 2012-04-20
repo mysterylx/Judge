@@ -2,6 +2,7 @@
 #define LOGIN_H
 
 #include <QMainWindow>
+#include "MainWindow.h"
 
 namespace Ui {
 class Login;
@@ -17,7 +18,6 @@ public:
     
 private slots:
     void on_loginButton_clicked();
-
     void on_exitButton_clicked();
 
 private:

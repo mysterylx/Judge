@@ -65,6 +65,19 @@
       <attribute name="title">
        <string>Submit</string>
       </attribute>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>80</y>
+         <width>46</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="clarificationsTab">
       <attribute name="title">
