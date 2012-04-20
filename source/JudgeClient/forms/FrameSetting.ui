@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <ui version="4.0">
- <class>FrameSettings</class>
- <widget class="QFrame" name="FrameSettings">
+ <class>FrameSetting</class>
+ <widget class="QFrame" name="FrameSetting">
   <property name="frameShadow">
    <enum>QFrame::Raised</enum>
   </property>
