@@ -2,6 +2,7 @@
 #define FRAMERUNS_H
 
 #include <QFrame>
+#include <QStandardItemModel>
 
 namespace Ui {
 class FrameRuns;
@@ -17,6 +18,9 @@ public:
     
 private:
     Ui::FrameRuns *ui;
+    QStandardItemModel *runsModel;
+
+    void initRunsTableView();
 };
 
 #endif // FRAMERUNS_H

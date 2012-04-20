@@ -6,7 +6,7 @@ FrameSubmit::FrameSubmit(QWidget *parent) :
     ui(new Ui::FrameSubmit)
 {
     ui->setupUi(this);
-    this->initAdditionView();
+    this->initAdditionalTableView();
 }
 
 FrameSubmit::~FrameSubmit()
@@ -14,7 +14,7 @@ FrameSubmit::~FrameSubmit()
     delete ui;
 }
 
-void FrameSubmit::initAdditionView()
+void FrameSubmit::initAdditionalTableView()
 {
     this->additionalModel = new QStandardItemModel();
     this->additionalModel->setColumnCount(2);

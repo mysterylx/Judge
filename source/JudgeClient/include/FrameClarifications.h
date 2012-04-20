@@ -2,6 +2,7 @@
 #define FRAMECLARIFICATIONS_H
 
 #include <QFrame>
+#include <QStandardItemModel>
 
 namespace Ui {
 class FrameClarifications;
@@ -17,6 +18,9 @@ public:
     
 private:
     Ui::FrameClarifications *ui;
+    QStandardItemModel *clarificationModel;
+
+    void initClarificationTableView();
 };
 
 #endif // FRAMECLARIFICATIONS_H

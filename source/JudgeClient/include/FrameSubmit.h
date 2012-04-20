@@ -20,7 +20,7 @@ private:
     Ui::FrameSubmit *ui;
     QStandardItemModel *additionalModel;
 
-    void initAdditionView();
+    void initAdditionalTableView();
 };
 
 #endif // FRAMESUBMIT_H
