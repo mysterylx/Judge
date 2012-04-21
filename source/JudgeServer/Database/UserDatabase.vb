@@ -1,4 +1,7 @@
-﻿Public Class UserDatabase
+﻿Imports System.Data.SqlClient
+Imports System.Data.OleDb
+
+Public Class UserDatabase
 
     Dim VProblemNumber As Integer
 
@@ -14,7 +17,7 @@
     Function ClearDatabase() As Boolean
         Dim connection As SqlConnection
         Dim Clear As Boolean
-        Dim reader As SqlDataReader
+        Dim connString As String
         connString = "Data Source = localhost;Initial Catalog = MatchInformation;integrated security=true"
         connection = New SqlConnection(connString)
         Try
@@ -49,7 +52,7 @@
         Try
             connection.Open()
             For i = 1 To VProblemNumber Step 1
-                While randnum = rand.next(1000, 9999)
+                While randnum = rand.Next(1000, 9999)
                     If used(randnum) <> True Then
                         used(randnum) = True
                         Exit While
@@ -70,7 +73,8 @@
                 Catch ExceptionErr As Exception
                     MessageBox.Show(ExceptionErr.Message)
                 End Try
-            Next id
+            Next
+            Return True
         Catch OleDbExceptionErr As OleDbException
             Debug.WriteLine(OleDbExceptionErr.Message)
         Catch InvalidOperationExceptionErr As InvalidOperationException
@@ -81,14 +85,14 @@
         connection.Close()
         connection.Dispose()
         connection = Nothing
+        Return False
     End Function
 
     Function IsUserValid(ByVal name As String, ByVal password As String) As Boolean
         Dim Valid As Boolean
-        Dim id As Integer
-        Dim passwd As Integer
         Dim reader As SqlDataReader
         Dim connection As SqlConnection
+        Dim connString As String
         connString = "Data Source = localhost;Initial Catalog = MatchInformation;integrated security=true"
         connection = New SqlConnection(connString)
         Try
@@ -120,7 +124,7 @@
         Try
             connection.Open()
             Dim sqlsearch As String = "select * from users where username = '" & name & "' "
-            Dim sqlupdate As String = "update users set userpassword = '" & passwd & " ' where username = ' " & name & " ' "
+            Dim sqlupdate As String = "update users set userpassword = '" & password & " ' where username = ' " & name & " ' "
             Dim cmdsearch As New SqlCommand(sqlsearch, connection)
             Dim cmdupdate As New SqlCommand(sqlupdate, connection)
             Dim reader As SqlDataReader = cmdsearch.ExecuteReader
