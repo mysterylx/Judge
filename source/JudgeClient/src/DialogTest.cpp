@@ -10,6 +10,8 @@ DialogTest::DialogTest(QWidget *parent) :
 
 DialogTest::~DialogTest()
 {
+    this->compileProcess->close();
+    this->runProcess->close();
     delete ui;
 }
 
@@ -61,7 +63,16 @@ void DialogTest::compileComplete()
     this->connect(this->runProcess, SIGNAL(readyRead()), this, SLOT(standardOutput()));
     this->connect(this->runProcess, SIGNAL(finished(int)), this, SLOT(standardComplete()));
     this->runTime = new QTime();
-    this->runProcess->start("main.exe");
+    switch(this->compiler)
+    {
+    case Information::COMPILER_GNU_C:
+    case Information::COMPILER_GNU_CPP:
+        this->runProcess->start("main.exe");
+        break;
+    case Information::COMPILER_JAVA:
+        this->runProcess->start("java Main");
+        break;
+    }
     this->runTime->start();
 }
 
