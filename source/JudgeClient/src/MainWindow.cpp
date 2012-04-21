@@ -17,10 +17,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::initTabs()
 {
-    this->frameSubmit           = new FrameSubmit();
-    this->frameClarifications   = new FrameClarifications();
-    this->frameRuns             = new FrameRuns();
-    this->frameSetting          = new FrameSetting();
+    this->frameSubmit           = new FrameSubmit(this);
+    this->frameClarifications   = new FrameClarifications(this);
+    this->frameRuns             = new FrameRuns(this);
+    this->frameSetting          = new FrameSetting(this);
     this->ui->submitTab->layout()->addWidget(this->frameSubmit);
     this->ui->clarificationsTab->layout()->addWidget(this->frameClarifications);
     this->ui->runsTab->layout()->addWidget(this->frameRuns);

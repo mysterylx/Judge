@@ -6,6 +6,11 @@
 class Information
 {
 public:
+    static const int COMPILER_NULL      = 0;
+    static const int COMPILER_GNU_C     = 1;
+    static const int COMPILER_GNU_CPP   = 2;
+    static const int COMPILER_JAVA      = 3;
+
     static Information &getInstance();
     void setUserName(const QString &name);
     void setUserPassword(const QString &password);

@@ -67,13 +67,25 @@ void FrameSubmit::on_submitButton_clicked()
 
 void FrameSubmit::on_testButton_clicked()
 {
-    this->compileProcess = new QProcess(this);
-    this->connect(this->compileProcess, SIGNAL(readyRead()), this, SLOT(compileOutput()));
-    //this->compileProcess->start("g++ -Wall " + this->ui->mainFileEdit->text() +  " -o main.exe");
-    this->compileProcess->start("main.exe");
-}
-
-void FrameSubmit::compileOutput()
-{
-    QMessageBox::information(this, "Output", this->compileProcess->readAll());
+    qint32 compiler = Information::COMPILER_NULL;
+    if(this->ui->languageComboBox->currentText() == "GNU C")
+    {
+        compiler = Information::COMPILER_GNU_C;
+    }
+    else if(this->ui->languageComboBox->currentText() == "GNU C++")
+    {
+        compiler = Information::COMPILER_GNU_CPP;
+    }
+    else if(this->ui->languageComboBox->currentText() == "Java")
+    {
+        compiler = Information::COMPILER_JAVA;
+    }
+    if(compiler != Information::COMPILER_NULL)
+    {
+        DialogTest *test = new DialogTest(this);
+        test->setCompiler(compiler);
+        test->setTestFileName(this->ui->mainFileEdit->text());
+        test->selectInputFile();
+        test->testFile();
+    }
 }

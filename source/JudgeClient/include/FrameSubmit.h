@@ -2,11 +2,12 @@
 #define FRAMESUBMIT_H
 
 #include <QFrame>
-#include <QProcess>
 #include <QMessageBox>
 #include <QStringList>
 #include <QFileDialog>
 #include <QStandardItemModel>
+#include "DialogTest.h"
+#include "Information.h"
 
 namespace Ui {
 class FrameSubmit;
@@ -23,12 +24,10 @@ public:
 private:
     Ui::FrameSubmit *ui;
     QStandardItemModel *additionalModel;
-    QProcess *compileProcess;
 
     void initAdditionalTableView();
     
 private slots:
-    void compileOutput();
     void on_addButton_clicked();
     void on_deleteButton_clicked();
     void on_selectButton_clicked();
